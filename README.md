@@ -28,21 +28,18 @@ To build a C program that prints integer, float,character, and string literals o
 ### Step 4: 
    Stop
 # Program:
+```
 #include <stdio.h>
 
 int main() {
-    int intLiteral = 10;
-    float floatLiteral = 3.14;
-    char charLiteral = 'A';
-    char stringLiteral[] = "Hello C";
-
-    printf("Integer literal: %d, Size: %lu bytes\n", intLiteral, sizeof(intLiteral));
-    printf("Float literal: %f, Size: %lu bytes\n", floatLiteral, sizeof(floatLiteral));
-    printf("Character literal: %c, Size: %lu bytes\n", charLiteral, sizeof(charLiteral));
-    printf("String literal: %s, Size: %lu bytes\n", stringLiteral, sizeof(stringLiteral));
+    printf("Integer literal: %d (size: %lu bytes)\n", 10, sizeof(10));
+    printf("Float literal: %f (size: %lu bytes)\n", 3.14f, sizeof(3.14f));
+    printf("Character literal: %c (size: %lu bytes)\n", 'A', sizeof('A'));
+    printf("String literal: %s (size: %lu bytes)\n", "Hello C", sizeof("Hello C"));
 
     return 0;
 }
+```
 # Output:
 <img width="436" height="207" alt="image" src="https://github.com/user-attachments/assets/b5869a0f-5249-4130-92d5-b8bb8cf2909f" />
 
@@ -78,16 +75,19 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 6:  
   Stop
 # Program:
+```
 #include <stdio.h>
 #define PI 3.14159
+
 int main() {
     const int DAYS = 7;
 
-    printf("Value of macro constant PI: %f\n", PI);
-    printf("Value of constant variable DAYS: %d\n", DAYS);
+    printf("Value of macro constant PI = %f\n", PI);
+    printf("Value of constant variable DAYS = %d\n", DAYS);
 
     return 0;
 }
+```
 # Output:
 <img width="399" height="153" alt="image" src="https://github.com/user-attachments/assets/deb5f569-b278-43d0-933f-193ce49a24bd" />
 
@@ -117,19 +117,23 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 5:    
    Stop
 # Program:
+```
 #include <stdio.h>
+
 int main() {
-    int intVar = 25;
-    float floatVar = 5.75;
-    double doubleVar = 19.99;
-    char charVar = 'G';
-    printf("Integer value: %d\n", intVar);
-    printf("Float value: %f\n", floatVar);
-    printf("Double value: %lf\n", doubleVar);
-    printf("Character value: %c\n", charVar);
+    int a = 10;
+    float b = 5.5f;
+    double c = 12.3456;
+    char d = 'Z';
+
+    printf("Integer: %d\n", a);
+    printf("Float: %f\n", b);
+    printf("Double: %lf\n", c);
+    printf("Character: %c\n", d);
+
     return 0;
 }
-
+```
 # Output:
 <img width="424" height="225" alt="image" src="https://github.com/user-attachments/assets/de38112f-8ebe-4495-bc3c-f2cb7abb0d0a" />
 
@@ -177,31 +181,32 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
+```
 #include <stdio.h>
+
 int main() {
     int a, b;
+
     printf("Enter two integers: ");
     scanf("%d %d", &a, &b);
-    printf("Arithmetic Operations:\n");
-    printf("Sum (a + b) = %d\n", a + b);
-    printf("Difference (a - b) = %d\n", a - b);
-    printf("Product (a * b) = %d\n", a * b);
-    if(b != 0) {
-        printf("Quotient (a / b) = %d\n", a / b);
-        printf("Remainder (a %% b) = %d\n", a % b);
-    } else {
-        printf("Division by zero is not allowed.\n");
-    }
-    printf("\nBitwise Operations:\n");
-    printf("AND (a & b) = %d\n", a & b);
-    printf("OR (a | b) = %d\n", a | b);
-    printf("XOR (a ^ b) = %d\n", a ^ b);
-    printf("Left shift (a << b) = %d\n", a << b);
-    printf("Right shift (a >> b) = %d\n", a >> b);
-    printf("Bitwise NOT of a (~a) = %d\n", ~a);
-    printf("Bitwise NOT of b (~b) = %d\n", ~b);
+
+    printf("Addition: %d\n", a + b);
+    printf("Subtraction: %d\n", a - b);
+    printf("Multiplication: %d\n", a * b);
+    printf("Division: %d\n", a / b);
+    printf("Remainder: %d\n", a % b);
+
+    printf("Bitwise AND: %d\n", a & b);
+    printf("Bitwise OR: %d\n", a | b);
+    printf("Bitwise XOR: %d\n", a ^ b);
+    printf("Left Shift (a << b): %d\n", a << b);
+    printf("Right Shift (a >> b): %d\n", a >> b);
+    printf("Bitwise NOT of a: %d\n", ~a);
+    printf("Bitwise NOT of b: %d\n", ~b);
+
     return 0;
 }
+```
 # Output:
 <img width="415" height="588" alt="image" src="https://github.com/user-attachments/assets/e1590511-bdd3-49aa-bf90-edecda1e0fde" />
 
@@ -252,17 +257,26 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
-#include<stdio.h>
-int main(){
+```
+#include <stdio.h>
+
+int main() {
     char ch;
+
     printf("Enter a character: ");
-    scanf("%c",&ch);
-    (ch>='0' && ch<='9')?printf("Digit\n"):
-    ((ch>='A' && ch<='Z')||(ch>='a' && ch<='z'))?
-    ((ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'||ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')?printf("Vowel\n"):printf("Consonant\n"))
-    :printf("Special Symbol\n");
+    scanf("%c", &ch);
+
+    (ch >= '0' && ch <= '9') ?
+        printf("Digit\n") :
+    ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) ?
+        ((ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
+          ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U') ?
+            printf("Vowel\n") : printf("Consonant\n")) :
+        printf("Special Symbol\n");
+
     return 0;
 }
+```
 # Output:
 <img width="445" height="156" alt="image" src="https://github.com/user-attachments/assets/bd1e7ed5-7a40-40b4-906f-1df9044d1126" />
 
