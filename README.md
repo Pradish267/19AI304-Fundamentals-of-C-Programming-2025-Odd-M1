@@ -28,20 +28,24 @@ To build a C program that prints integer, float,character, and string literals o
 ### Step 4: 
    Stop
 # Program:
-```
+```asm
 #include <stdio.h>
-
-int main() {
-    printf("Integer literal: %d (size: %lu bytes)\n", 10, sizeof(10));
-    printf("Float literal: %f (size: %lu bytes)\n", 3.14f, sizeof(3.14f));
-    printf("Character literal: %c (size: %lu bytes)\n", 'A', sizeof('A'));
-    printf("String literal: %s (size: %lu bytes)\n", "Hello C", sizeof("Hello C"));
-
+int main() 
+{
+    int a = 25;
+    float b = 3.14;
+    char c = 'A';
+    char d[] = "Hello World";
+    printf("Integer Literal: %d\n", a);
+    printf("Float Literal: %.2f\n", b);
+    printf("Character Literal: %c\n", c);
+    printf("String Literal: %s\n", d);
     return 0;
 }
 ```
 # Output:
-<img width="436" height="207" alt="image" src="https://github.com/user-attachments/assets/b5869a0f-5249-4130-92d5-b8bb8cf2909f" />
+<img width="449" height="153" alt="image" src="https://github.com/user-attachments/assets/112f8d17-6a98-4058-a446-bf52c4694745" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -75,21 +79,20 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 6:  
   Stop
 # Program:
-```
+```asm
 #include <stdio.h>
-#define PI 3.14159
-
-int main() {
-    const int DAYS = 7;
-
-    printf("Value of macro constant PI = %f\n", PI);
-    printf("Value of constant variable DAYS = %d\n", DAYS);
-
+#define MAX_VALUE 100   
+int main() 
+{
+    const int MIN_VALUE = 10;   
+    printf("Macro Constant (MAX_VALUE): %d\n", MAX_VALUE);
+    printf("Constant Variable (MIN_VALUE): %d\n", MIN_VALUE);
     return 0;
 }
 ```
 # Output:
-<img width="399" height="153" alt="image" src="https://github.com/user-attachments/assets/deb5f569-b278-43d0-933f-193ce49a24bd" />
+<img width="517" height="277" alt="image" src="https://github.com/user-attachments/assets/dae9a215-f6c6-4aa7-989a-eb4d0a131df7" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -117,25 +120,24 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 5:    
    Stop
 # Program:
-```
+```asm
 #include <stdio.h>
-
-int main() {
+int main() 
+{
     int a = 10;
-    float b = 5.5f;
-    double c = 12.3456;
-    char d = 'Z';
-
-    printf("Integer: %d\n", a);
-    printf("Float: %f\n", b);
-    printf("Double: %lf\n", c);
-    printf("Character: %c\n", d);
-
+    float b = 3.14f;
+    double c = 20.12345;
+    char d = 'A';
+    printf("Integer value: %d\n", a);
+    printf("Float value: %.2f\n", b);
+    printf("Double value: %.5lf\n", c);
+    printf("Character value: %c\n", d);
     return 0;
 }
 ```
 # Output:
-<img width="424" height="225" alt="image" src="https://github.com/user-attachments/assets/de38112f-8ebe-4495-bc3c-f2cb7abb0d0a" />
+<img width="542" height="321" alt="image" src="https://github.com/user-attachments/assets/23ae2880-c4e7-42f6-ae48-b324e0356151" />
+
 
 
 # Result: 
@@ -181,34 +183,25 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
-```
+```asm
 #include <stdio.h>
-
-int main() {
-    int a, b;
-
-    printf("Enter two integers: ");
-    scanf("%d %d", &a, &b);
-
-    printf("Addition: %d\n", a + b);
-    printf("Subtraction: %d\n", a - b);
-    printf("Multiplication: %d\n", a * b);
-    printf("Division: %d\n", a / b);
-    printf("Remainder: %d\n", a % b);
-
-    printf("Bitwise AND: %d\n", a & b);
-    printf("Bitwise OR: %d\n", a | b);
-    printf("Bitwise XOR: %d\n", a ^ b);
-    printf("Left Shift (a << b): %d\n", a << b);
-    printf("Right Shift (a >> b): %d\n", a >> b);
-    printf("Bitwise NOT of a: %d\n", ~a);
-    printf("Bitwise NOT of b: %d\n", ~b);
-
+int main() 
+{
+    int a = 25;
+    float b = 3.14;
+    char c = 'A';
+    char d[] = "Hello World";
+    printf("Integer Literal: %d\n", a);
+    printf("Float Literal: %.2f\n", b);
+    printf("Character Literal: %c\n", c);
+    printf("String Literal: %s\n", d);
     return 0;
 }
 ```
+
 # Output:
-<img width="415" height="588" alt="image" src="https://github.com/user-attachments/assets/e1590511-bdd3-49aa-bf90-edecda1e0fde" />
+<img width="635" height="542" alt="image" src="https://github.com/user-attachments/assets/b7651b69-80ee-4350-b5af-f12b1b7115fa" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
@@ -257,28 +250,26 @@ Thus, the program was implemented and executed successfully, and the required ou
 ### Step 8:   
   Stop
 # Program:
-```
+```asm
 #include <stdio.h>
-
 int main() {
     char ch;
-
     printf("Enter a character: ");
     scanf("%c", &ch);
-
-    (ch >= '0' && ch <= '9') ?
-        printf("Digit\n") :
-    ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) ?
-        ((ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u'||
-          ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U') ?
-            printf("Vowel\n") : printf("Consonant\n")) :
-        printf("Special Symbol\n");
-
+    (ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' ||
+     ch=='A' || ch=='E' || ch=='I' || ch=='O' || ch=='U')
+        ? printf("It is a Vowel\n")
+    : ((ch >= '0' && ch <= '9')
+        ? printf("It is a Digit\n")
+    : (( (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') )
+        ? printf("It is a Consonant\n")
+        : printf("It is a Special Symbol\n")));
     return 0;
 }
 ```
 # Output:
-<img width="445" height="156" alt="image" src="https://github.com/user-attachments/assets/bd1e7ed5-7a40-40b4-906f-1df9044d1126" />
+<img width="563" height="305" alt="image" src="https://github.com/user-attachments/assets/b954803c-2ea9-4053-b3ff-aac718a9e04c" />
+
 
 # Result: 
 Thus, the program was implemented and executed successfully, and the required output was obtained.
